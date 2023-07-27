@@ -82,9 +82,7 @@ define([
               var setPub = Items.qMeta.published;
             }
             Items.qData.cells.forEach((element) => {
-              if (element.type != "MCD") {
-                // $scope.objIdList.push(element);
-                console.log("element"+element);
+              if (element.type != "MCD" && element.type != "filterpane" && element.type != "KPI") {
                 if (hasProperty) {
                   element.published = setPub;
                   $scope.objIdList.push(element);
@@ -147,6 +145,7 @@ define([
           selectedObjects.forEach(function (object) {
             console.log("Selected object:", object.name);
             app.getObject(object.name).then((model) => {
+              console.log("object"+JSON.stringify(object));
               model
                 .exportData(
                   "OOXML",
