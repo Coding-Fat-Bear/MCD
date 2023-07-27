@@ -1,0 +1,8 @@
+{
+	"name" : "MCD",
+	"description" : "Multiple chart download",
+	"icon" : "extension",
+	"type" : "visualization",
+	"version": "0.2",
+	"author": "AGN_Lijoe"
+}

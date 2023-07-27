@@ -1,0 +1,85 @@
+<style>
+  table {
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    background-color: #f6f8f9;
+    color: #555;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f6f8f9;
+  }
+
+  tr:hover {
+    background-color: #e6f3f7;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  button{
+        margin: 5px;
+        padding: 4px;
+  }
+  .button-bar {
+    margin-top: 10px;
+  }
+
+  .button-bar button {
+    margin-right: 10px;
+  }
+  /* CSS for scroll bar */
+  .scrollable-table {
+    max-height: 500px; /* Adjust the height as needed */
+    overflow-y: auto;
+  }
+</style>
+
+<div qv-extension>
+  <!-- <button ng-click="show()">show</button> -->
+  <button ng-click="selectAll()" >Check All</button>
+  <button ng-click="unselectAll()" >Uncheck All</button>
+  <button ng-click="export()" >Export</button>
+  
+  <div class="scrollable-table">
+    <table border="1">
+      <thead>
+        <th>Selection</th>
+        <th>Object Type</th>
+        <th>Title</th>
+        <th>Published</th>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in objIdList">
+          <td>
+            <input
+              type="checkbox"
+              ng-model="row.selected"
+              ng-change="store()"
+            />
+          </td>
+          <td>{{row.type}}</td>
+          <td>{{row.title}}</td>
+          <td>{{row.published}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- <button ng-click="show()">show</button> -->
+  <!-- <button ng-click="selectAll()">Check All</button>
+  <button ng-click="export()">Export</button> -->
+</div>
