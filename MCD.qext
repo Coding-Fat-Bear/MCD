@@ -3,6 +3,7 @@
 	"description" : "Multiple chart download",
 	"icon" : "extension",
 	"type" : "visualization",
-	"version": "0.2",
+	"preview" : "flame.png",
+	"version": "0.3",
 	"author": "AGN_Lijoe"
 }
