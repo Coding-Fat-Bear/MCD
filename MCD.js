@@ -82,7 +82,8 @@ define([
               var setPub = Items.qMeta.published;
             }
             Items.qData.cells.forEach((element) => {
-              if (element.type != "MCD" && element.type != "filterpane" && element.type != "KPI") {
+              console.log(element);
+              if (element.type !== "MCD" && element.type !== "filterpane" && element.type !== "kpi") {
                 if (hasProperty) {
                   element.published = setPub;
                   $scope.objIdList.push(element);
