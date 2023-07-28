@@ -46,7 +46,9 @@
   .scrollable-table {
     max-height: 500px; /* Adjust the height as needed */
     overflow-y: auto;
+    overflow-x: auto;
   }
+ 
 </style>
 
 <div qv-extension>
@@ -56,23 +58,26 @@
   <button ng-click="export()" >Export</button>
   
   <div class="scrollable-table">
-    <table border="1">
+    <table border="1" >
       <thead>
         <th>Selection</th>
         <th>Object Type</th>
+        <th>Sheet name</th>
         <th>Title</th>
         <th>Published</th>
       </thead>
       <tbody>
         <tr ng-repeat="row in objIdList">
-          <td>
+          <td >
             <input
               type="checkbox"
               ng-model="row.selected"
               ng-change="store()"
+              style="align-self: center;border: none;"
             />
           </td>
           <td>{{row.type}}</td>
+          <td >{{row.sheetname}}</td>
           <td>{{row.title}}</td>
           <td>{{row.published}}</td>
         </tr>
